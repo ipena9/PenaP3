@@ -1,0 +1,68 @@
+﻿@using PenaP3.Models
+@model IEnumerable<InvestmentCalc>
+@{
+    ViewData["Title"] = "Summary";
+    ViewBag.Title = "Summary";
+}
+<header>
+    <h2>
+        <p>Summary</p>
+    </h2>
+    <style type="text/css">
+        h2 {
+            font-size: 60px;
+        }
+    </style>
+</header>
+<h3>
+    Investment
+</h3>
+<style type="text/css">
+    h3 {
+        font-size: 40px;
+    }
+
+</style>
+<body>
+
+    <script>
+        //used the javascript demo as base
+        //function found at https://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+
+        var principle = parseInt(getParameterByName("Principle"));
+        var Years = parseInt(getParameterByName("Years"));
+        var cmpPerYer = parseInt(getParameterByName("cmpPerYer"));
+        var interest = parseInt(getParameterByName("interest"));
+
+        var investment = new investment(principle, years, interest, numTimes)
+         @Html.Label("Principle :")
+        @Html.Display("Principle")
+    </script>
+    <p>
+        @Html.Label("Principle")
+        @Html.Display("Principle")
+    </p>
+    <p>
+        @Html.Label("Years")
+        @Html.Display("Years")
+    </p>
+    <p>
+        @Html.Label("CmpOPerYr")
+        @Html.Display("CmpOPerYr")
+    </p>
+    <p>
+        @Html.Label("FurtreValue")
+        @Html.Display("FurtreValue")
+        <br />
+    </p>
+</body>
+@Html.ActionLink("Calculate New Investment", "Index")

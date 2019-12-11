@@ -1,0 +1,55 @@
+﻿@{
+    ViewData["Title"] = "Investment Calc";
+}
+<h2>@ViewData["Investment Parameters"]</h2>
+
+<h3>@ViewData["Investment"]</h3>
+<html>
+<head>
+    <title>Investment Calc</title>
+</head>
+<body>
+    <header>
+        <h2>
+            <p>Investment Parameters</p>
+        </h2>
+        <style type="text/css">
+            h1 {
+                text-align: center;
+                font-family: 'Comic Sans MS';
+                font-size: 60px;
+                border-bottom-color: darkred;
+            }
+        </style>
+    </header>
+    <h3>
+        Investment
+    </h3>
+    <style type="text/css">
+        h1 {
+            text-align: center;
+            font-family: 'Comic Sans MS';
+            font-size: 40px;
+            border-bottom-color: darkred;
+        }
+    </style>
+
+    <p></p>
+    <p></p>
+    <form action="Home/Summary" method="get">
+        <fieldset>
+            <p>Principle:</p>
+            <p> <input type="text" name="Principle" value="" /></p>
+            <p>Interest: </p>
+            <p> <input type="text" name="interest" value="" /></p>
+            <p>Years:</p>
+            <p> <input type="text" name="Years" value="" /></p>
+            <p>Compounds per Year:</p>
+            <p> <input type="text" name="cmpPerYer" value="" /></p>
+            <p>
+                <input type="submit" value="submit" />
+            </p>
+        </fieldset>
+    </form>
+</body>
+</html>
